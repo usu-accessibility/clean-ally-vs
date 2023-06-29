@@ -1,27 +1,54 @@
 {
-  "name": "clean-ally",
-  "displayName": "clean-ally",
-  "description": "Cleans extraneous HTML that is generated from the Anthology Ally HTML export",
-  "version": "1.0.0",
-  "engines": {
-    "vscode": "^1.72.0"
-  },
+  "name": "clean-ally-vs",
+  "displayName": "clean-ally-vs",
+  "description": "Cleans extraneous HTML that is generated from the Anthology Ally HTML export.",
+  "version": "1.3.0",
   "icon": "images/Icon.png",
-  "publisher": "clean-ally",
+  "publisher": "DigitalAccessibilityServices-USU",
+  "engines": {
+    "vscode": "^1.79.0"
+  },
   "categories": [
     "Other"
   ],
   "activationEvents": [
-    "onCommand:clean-ally.cleanAlly"
+    "*"
   ],
   "main": "./extension.js",
   "contributes": {
     "commands": [
       {
-      "command": "clean-ally.cleanAlly",
-      "title": "start clean-ally"
+        "command": "clean-ally-vs.helloWorld",
+        "title": "Start Clean-ally"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "clean-ally-vs.helloWorld",
+          "group": "Accessibility Services"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "clean-ally-vs.helloWorld",
+          "group": "Accessibility Services"
+        }
+      ],
+      "editor/title/context": [
+        {
+          "command": "clean-ally-vs.helloWorld",
+          "group": "Accessibility Services"
+        }
+      ],
+      "view/title": [
+        {
+          "command": "clean-ally-vs.helloWorld",
+          "title": "Start Clean-ally",
+          "group": "navigation"
+        }
+      ]
     }
-  ]
   },
   "scripts": {
     "lint": "eslint .",
@@ -29,14 +56,17 @@
     "test": "node ./test/runTest.js"
   },
   "devDependencies": {
-    "@types/vscode": "^1.72.0",
-    "@types/glob": "^8.0.0",
-    "@types/mocha": "^10.0.0",
-    "@types/node": "16.x",
-    "eslint": "^8.24.0",
-    "glob": "^8.0.3",
-    "mocha": "^10.0.0",
-    "typescript": "^4.8.4",
-    "@vscode/test-electron": "^2.1.5"
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "20.2.5",
+    "@types/vscode": "^1.79.0",
+    "@vscode/test-electron": "^2.3.2",
+    "eslint": "^8.41.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^5.1.3"
+  },
+  "dependencies": {
+    "axios": "^1.4.0"
   }
 }
